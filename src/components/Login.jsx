@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router';
 
 function LoginPage() {
+  const navigate = useNavigate();
   return (
  
     <div>
@@ -19,7 +21,8 @@ function LoginPage() {
            
               className="w-full p-2 border rounded mb-4"
             />
-            <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Submit</button>
+            <button type="submit"  onClick={() =>
+                 navigate("/dashboard")} className="w-full bg-blue-500 hover:bg-blue-700 text-white p-2 rounded">Submit</button>
           </form>
     </div>
     </div>

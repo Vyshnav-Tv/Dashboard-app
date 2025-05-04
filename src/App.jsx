@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/Login'
 import SideBar from './components/SideBar'
 import Overview from './components/OverViewPage'
@@ -11,8 +11,20 @@ function App() {
 
   return (
     <>
-   {/* <DashLayout/> */}
-   <Settings/></>
+    <BrowserRouter>
+    <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/dashboard" element={<DashLayout />}/>
+                  <Route path="/settings" element={<Settings/>} />
+                    <Route path="/overview" element={<Overview />} />
+                  
+                
+                
+            </Routes>
+    
+    
+    </BrowserRouter>
+   </>
   )
 }
 
